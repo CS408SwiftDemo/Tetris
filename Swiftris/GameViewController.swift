@@ -111,7 +111,7 @@ class GameViewController: UIViewController, TetrisDelegate, UIGestureRecognizerD
     func gameDidEnd(tetris: Tetris) {
         view.userInteractionEnabled = false
         scene.stopTicking()
-        scene.playSound("Sounds/gameover.mp3")
+        scene.playSound("gameover.mp3")
         scene.animateCollapsingLines(tetris.removeAllBlocks(), fallenBlocks: tetris.removeAllBlocks()) {
             tetris.beginGame()
         }
@@ -124,7 +124,7 @@ class GameViewController: UIViewController, TetrisDelegate, UIGestureRecognizerD
         } else if scene.tickLengthMillis > 50 {
             scene.tickLengthMillis -= 50
         }
-        scene.playSound("Sounds/levelup.mp3")
+        scene.playSound("levelup.mp3")
     }
     
     func gameShapeDidDrop(tetris: Tetris) {
@@ -132,7 +132,7 @@ class GameViewController: UIViewController, TetrisDelegate, UIGestureRecognizerD
         scene.redrawShape(tetris.fallingShape!) {
             tetris.letShapeFall()
         }
-        scene.playSound("Sounds/drop.mp3")
+        scene.playSound("drop.mp3")
     }
     
     func gameShapeDidLand(tetris: Tetris) {
@@ -144,7 +144,7 @@ class GameViewController: UIViewController, TetrisDelegate, UIGestureRecognizerD
             scene.animateCollapsingLines(removedLines.linesRemoved, fallenBlocks:removedLines.fallenBlocks) {
                 self.gameShapeDidLand(tetris)
             }
-            scene.playSound("Sounds/bomb.mp3")
+            scene.playSound("bomb.mp3")
         } else {
             nextShape()
         }

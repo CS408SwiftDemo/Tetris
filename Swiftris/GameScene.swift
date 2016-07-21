@@ -27,7 +27,7 @@ class GameScene: SKScene {
         
         addChild(gameLayer)
         
-        let gameBoardTexture = SKTexture(imageNamed: "gameboard")
+        let gameBoardTexture = SKTexture(imageNamed: "cat.jpg")
         let gameBoard = SKSpriteNode(texture: gameBoardTexture, size: CGSizeMake(BlockSize * CGFloat(NumColumns), BlockSize * CGFloat(NumRows)))
         gameBoard.anchorPoint = CGPoint(x:0, y:1.0)
         gameBoard.position = LayerPosition
